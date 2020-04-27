@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Min första visualisering med D3.js</title>
+    <script src = "https://d3js.org/d3.v4.js"></script>
+</head>
+<body>
+
+    <h1>Tidsresor med enter()</h1>
+
+
+    <!--Svg grafik som ska modifieras-->
+<script>
+
+    var dataTable = [30, 50, 70, 80];
+// Skapa SVG med JS
+var canvas = d3.select("body")
+    .append("svg")
+    .attr("width", 400)
+    .attr("height", 400)
+
+    // Här börjar tidsresan
+    canvas.selectAll("staplar")
+        .data(dataTable) // fyll staplarna med datan som vi har
+
+        // gå in i varje virtuella stapel
+        .enter()
+            .append("rect")
+            .attr("height", 40)
+            .attr("width", function(data){ return data })
+            .attr("x", function(data, i){ return 100 * i; });
+
+
+</script>
+          
+    
+</body>
+</html>
