@@ -9,5 +9,9 @@
     "gulp-util": "^3.0.8",
     "gulp-webserver": "^0.9.1"
   },
-  "author": "Ray Villalobos"
+  "author": "Ray Villalobos",
+  "dependencies": {
+    "gulp-cli": "^2.2.0"
+  },
+  "scripts": {"gulp": "gulp"}
 }

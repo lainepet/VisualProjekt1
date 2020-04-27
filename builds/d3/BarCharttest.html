@@ -1,0 +1,40 @@
+</head>
+<body>
+
+    <h1>Tidsresor med enter()</h1>
+
+
+    <!--Svg grafik som ska modifieras-->
+<script>
+
+    var dataTable = [30, 50, 70, 10, 80];
+    var height = 200;
+    var width = 400;
+    var barWidth = 40;
+// Skapa SVG med JS
+var canvas = d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .style("background", "lightgrey");
+
+    // Här börjar tidsresan
+    canvas.selectAll("staplar")
+        .data(dataTable) // fyll staplarna med datan som vi har
+
+        // gå in i varje virtuella stapel
+        .enter()
+            .append("rect")
+            .attr("width", barWidth)
+            .attr("height", function(data){return data;})
+            
+            .attr("x", function(data, i){ return 50 * i; })
+
+            .attr("y", function(data){ return height - data; });
+
+
+</script>
+          
+    
+</body>
+</html>
