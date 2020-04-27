@@ -1,0 +1,1 @@
+console.log("hejsan i ett script");
